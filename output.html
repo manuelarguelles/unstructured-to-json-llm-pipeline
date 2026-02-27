@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Extraction Results — Unstructured → JSON Pipeline</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+        background: #0f0f1a; color: #e0e0e0; padding: 24px; }
+.container { max-width: 900px; margin: 0 auto; }
+h1 { color: #00d2ff; font-size: 28px; margin-bottom: 4px; }
+.subtitle { color: #888; margin-bottom: 24px; }
+.stats { display: flex; gap: 16px; margin-bottom: 24px; }
+.stat { background: #1a1a2e; border-radius: 10px; padding: 16px 20px; flex: 1; text-align: center; }
+.stat-value { font-size: 28px; font-weight: bold; color: #00ff88; }
+.stat-label { font-size: 12px; color: #888; margin-top: 4px; }
+.card { background: #1a1a2e; border-radius: 12px; margin-bottom: 16px; overflow: hidden; 
+         border: 1px solid #2a2a4a; }
+.card-header { display: flex; justify-content: space-between; align-items: center; 
+                padding: 16px 20px; border-bottom: 1px solid #2a2a4a; }
+.card-header h2 { font-size: 18px; color: #fff; margin-bottom: 6px; }
+.tag { display: inline-block; background: #2a2a4a; color: #aaa; padding: 2px 10px; 
+        border-radius: 12px; font-size: 12px; margin-right: 6px; }
+.tag.schema { background: #1a3a5c; color: #00d2ff; }
+.confidence { width: 56px; height: 56px; border-radius: 50%; border: 3px solid; 
+               display: flex; align-items: center; justify-content: center; 
+               font-weight: bold; font-size: 16px; flex-shrink: 0; }
+.card-body { padding: 16px 20px; }
+.meta { display: flex; gap: 16px; font-size: 12px; color: #666; margin-bottom: 12px; flex-wrap: wrap; }
+.field { margin-bottom: 8px; }
+.field .label { display: inline-block; width: 110px; color: #00d2ff; font-size: 13px; }
+details { margin-top: 12px; }
+summary { cursor: pointer; color: #00d2ff; font-size: 13px; }
+pre { background: #0a0a15; padding: 12px; border-radius: 8px; overflow-x: auto; 
+       font-size: 12px; color: #ccc; margin-top: 8px; white-space: pre-wrap; }
+footer { text-align: center; color: #555; font-size: 12px; margin-top: 32px; }
+a { color: #00d2ff; }
+</style>
+</head><body>
+<div class="container">
+    <h1>🔬 Extraction Results</h1>
+    <p class="subtitle">Unstructured Text → Structured JSON Pipeline</p>
+    
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-value">5</div>
+            <div class="stat-label">Extractions</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value" style="color: #00d2ff">93%</div>
+            <div class="stat-label">Avg Confidence</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value" style="color: #fff">5/5</div>
+            <div class="stat-label">Success Rate</div>
+        </div>
+    </div>
+    
+    
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h2>Acme Corporation</h2>
+                    <span class="tag">Cloud Infrastructure</span>
+                    <span class="tag schema">CompanyProfile</span>
+                </div>
+                <div class="confidence" style="border-color: #00ff88; color: #00ff88">
+                    90%
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="meta">
+                    <span>📄 acme_corp.txt</span>
+                    <span>🤖 databricks-meta-llama-3-3-70b-instruct</span>
+                    <span>🕐 2026-02-27T19:52:37</span>
+                </div>
+                
+            <div class="field"><span class="label">Headquarters</span>San Francisco, California</div>
+            <div class="field"><span class="label">Employees</span>1,200</div>
+            <div class="field"><span class="label">Revenue</span>$80 million to $100 million</div>
+            <div class="field"><span class="label">Products</span>CloudSync, DataBridge, AutoScale</div>
+            
+                <details>
+                    <summary>View raw JSON</summary>
+                    <pre>{
+  &quot;company_name&quot;: &quot;Acme Corporation&quot;,
+  &quot;industry&quot;: &quot;Cloud Infrastructure&quot;,
+  &quot;headquarters&quot;: &quot;San Francisco, California&quot;,
+  &quot;employee_count&quot;: 1200,
+  &quot;revenue_range&quot;: &quot;$80 million to $100 million&quot;,
+  &quot;key_products&quot;: [
+    &quot;CloudSync&quot;,
+    &quot;DataBridge&quot;,
+    &quot;AutoScale&quot;
+  ],
+  &quot;description&quot;: &quot;Acme Corp is a rapidly growing cloud infrastructure company that helps mid-market enterprises manage their cloud workloads at scale.&quot;,
+  &quot;confidence_score&quot;: 0.9
+}</pre>
+                </details>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h2>Globex Industries</h2>
+                    <span class="tag">Manufacturing & Industrial</span>
+                    <span class="tag schema">CompanyProfile</span>
+                </div>
+                <div class="confidence" style="border-color: #00ff88; color: #00ff88">
+                    95%
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="meta">
+                    <span>📄 globex_industries.txt</span>
+                    <span>🤖 databricks-meta-llama-3-3-70b-instruct</span>
+                    <span>🕐 2026-02-27T19:52:41</span>
+                </div>
+                
+            <div class="field"><span class="label">Headquarters</span>Springfield, Ohio</div>
+            <div class="field"><span class="label">Employees</span>18,500</div>
+            <div class="field"><span class="label">Revenue</span>$3.2 billion</div>
+            <div class="field"><span class="label">Products</span>GX-900 series robotic welding arms, Thermalloy-X structural composites, PowerCore turbine blade system</div>
+            
+                <details>
+                    <summary>View raw JSON</summary>
+                    <pre>{
+  &quot;company_name&quot;: &quot;Globex Industries&quot;,
+  &quot;industry&quot;: &quot;Manufacturing &amp; Industrial&quot;,
+  &quot;headquarters&quot;: &quot;Springfield, Ohio&quot;,
+  &quot;employee_count&quot;: 18500,
+  &quot;revenue_range&quot;: &quot;$3.2 billion&quot;,
+  &quot;key_products&quot;: [
+    &quot;GX-900 series robotic welding arms&quot;,
+    &quot;Thermalloy-X structural composites&quot;,
+    &quot;PowerCore turbine blade system&quot;
+  ],
+  &quot;description&quot;: &quot;Globex Industries is a diversified heavy manufacturing conglomerate with its global headquarters in Springfield, Ohio, operating across four primary business units: Advanced Materials, Industrial Automation, Energy Systems, and Defense Contracts.&quot;,
+  &quot;confidence_score&quot;: 0.95
+}</pre>
+                </details>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h2>Initech Capital Partners</h2>
+                    <span class="tag">Private Equity</span>
+                    <span class="tag schema">BuyerProfile</span>
+                </div>
+                <div class="confidence" style="border-color: #00ff88; color: #00ff88">
+                    90%
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="meta">
+                    <span>📄 initech_capital.txt</span>
+                    <span>🤖 databricks-meta-llama-3-3-70b-instruct</span>
+                    <span>🕐 2026-02-27T19:52:44</span>
+                </div>
+                
+            <div class="field"><span class="label">Budget</span>$25 million to $150 million</div>
+            <div class="field"><span class="label">Interests</span>AI infrastructure tooling, revenue operations software, healthcare data management, compliance automation, B2B software, fintech infrastructure, AI-enabled services</div>
+            <div class="field"><span class="label">Contacts</span>Bill Lumbergh (Managing Partner), Joanna Doe (Partner, Portfolio Operations), Tom Smythe (Principal, Deal Sourcing)</div>
+            <div class="field"><span class="label">Deals</span>DataCo acquisition ($62 million, 2022)<br>SyncSoft and CloudLayer merger (2023)<br>VectorSight minority growth investment (2024)</div>
+            
+                <details>
+                    <summary>View raw JSON</summary>
+                    <pre>{
+  &quot;company_name&quot;: &quot;Initech Capital Partners&quot;,
+  &quot;industry&quot;: &quot;Private Equity&quot;,
+  &quot;acquisition_interests&quot;: [
+    &quot;AI infrastructure tooling&quot;,
+    &quot;revenue operations software&quot;,
+    &quot;healthcare data management&quot;,
+    &quot;compliance automation&quot;,
+    &quot;B2B software&quot;,
+    &quot;fintech infrastructure&quot;,
+    &quot;AI-enabled services&quot;
+  ],
+  &quot;budget_range&quot;: &quot;$25 million to $150 million&quot;,
+  &quot;key_contacts&quot;: [
+    {
+      &quot;name&quot;: &quot;Bill Lumbergh&quot;,
+      &quot;title&quot;: &quot;Managing Partner&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Joanna Doe&quot;,
+      &quot;title&quot;: &quot;Partner, Portfolio Operations&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Tom Smythe&quot;,
+      &quot;title&quot;: &quot;Principal, Deal Sourcing&quot;
+    }
+  ],
+  &quot;deal_history&quot;: [
+    &quot;DataCo acquisition ($62 million, 2022)&quot;,
+    &quot;SyncSoft and CloudLayer merger (2023)&quot;,
+    &quot;VectorSight minority growth investment (2024)&quot;
+  ],
+  &quot;confidence_score&quot;: 0.9
+}</pre>
+                </details>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h2>Oceanic Analytics</h2>
+                    <span class="tag">Data Intelligence</span>
+                    <span class="tag schema">CompanyProfile</span>
+                </div>
+                <div class="confidence" style="border-color: #00ff88; color: #00ff88">
+                    95%
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="meta">
+                    <span>📄 oceanic_analytics.txt</span>
+                    <span>🤖 databricks-meta-llama-3-3-70b-instruct</span>
+                    <span>🕐 2026-02-27T19:52:47</span>
+                </div>
+                
+            <div class="field"><span class="label">Headquarters</span>Miami, Florida</div>
+            <div class="field"><span class="label">Employees</span>59</div>
+            <div class="field"><span class="label">Revenue</span>$4.2 million</div>
+            <div class="field"><span class="label">Products</span>OceanOS</div>
+            
+                <details>
+                    <summary>View raw JSON</summary>
+                    <pre>{
+  &quot;company_name&quot;: &quot;Oceanic Analytics&quot;,
+  &quot;industry&quot;: &quot;Data Intelligence&quot;,
+  &quot;headquarters&quot;: &quot;Miami, Florida&quot;,
+  &quot;employee_count&quot;: 59,
+  &quot;revenue_range&quot;: &quot;$4.2 million&quot;,
+  &quot;key_products&quot;: [
+    &quot;OceanOS&quot;
+  ],
+  &quot;description&quot;: &quot;Oceanic Analytics is an early-stage data intelligence startup that provides a no-code data orchestration layer for small and mid-size logistics and supply chain companies.&quot;,
+  &quot;confidence_score&quot;: 0.95
+}</pre>
+                </details>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <h2>Wayne Enterprises</h2>
+                    <span class="tag">Conglomerate</span>
+                    <span class="tag schema">CompanyProfile</span>
+                </div>
+                <div class="confidence" style="border-color: #00ff88; color: #00ff88">
+                    95%
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="meta">
+                    <span>📄 wayne_enterprises.txt</span>
+                    <span>🤖 databricks-meta-llama-3-3-70b-instruct</span>
+                    <span>🕐 2026-02-27T19:52:49</span>
+                </div>
+                
+            <div class="field"><span class="label">Headquarters</span>Gotham City, New Jersey</div>
+            <div class="field"><span class="label">Employees</span>80,000</div>
+            <div class="field"><span class="label">Revenue</span>$31 billion to $35 billion</div>
+            <div class="field"><span class="label">Products</span>stealth communications systems, next-generation body armor composites, autonomous reconnaissance drones, urban air mobility vehicles</div>
+            
+                <details>
+                    <summary>View raw JSON</summary>
+                    <pre>{
+  &quot;company_name&quot;: &quot;Wayne Enterprises&quot;,
+  &quot;industry&quot;: &quot;Conglomerate&quot;,
+  &quot;headquarters&quot;: &quot;Gotham City, New Jersey&quot;,
+  &quot;employee_count&quot;: 80000,
+  &quot;revenue_range&quot;: &quot;$31 billion to $35 billion&quot;,
+  &quot;key_products&quot;: [
+    &quot;stealth communications systems&quot;,
+    &quot;next-generation body armor composites&quot;,
+    &quot;autonomous reconnaissance drones&quot;,
+    &quot;urban air mobility vehicles&quot;
+  ],
+  &quot;description&quot;: &quot;Wayne Enterprises is a diversified global conglomerate with seven distinct business divisions, operating in 42 countries and employing over 80,000 people worldwide.&quot;,
+  &quot;confidence_score&quot;: 0.95
+}</pre>
+                </details>
+            </div>
+        </div>
+        
+    
+    <footer>
+        Generated by <a href="https://github.com/manuelarguelles/unstructured-to-json-llm-pipeline">unstructured-to-json-llm-pipeline</a>
+        · Model: Llama 3.3 70B (Databricks)
+    </footer>
+</div>
+</body></html>

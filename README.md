@@ -124,12 +124,28 @@ Total: 5/5 successful extractions
 
 ---
 
+## View Results
+
+After running the pipeline, generate an interactive HTML report:
+
+```bash
+python view_results.py
+```
+
+This creates `output.html` and opens it in your browser — a visual dashboard showing all extractions with confidence scores, metadata, and raw JSON.
+
+👉 **[View sample output](output.html)** — pre-generated from the 5 sample texts.
+
+---
+
 ## Architecture
 
 ```
 unstructured-to-json-llm-pipeline/
 ├── pipeline.py              # Main orchestrator (~180 lines)
 ├── models.py                # Pydantic v2 schemas
+├── view_results.py          # HTML report generator
+├── output.html              # Pre-generated results (viewable)
 ├── examples/
 │   └── sample_texts/        # Input .txt files
 │       ├── acme_corp.txt
