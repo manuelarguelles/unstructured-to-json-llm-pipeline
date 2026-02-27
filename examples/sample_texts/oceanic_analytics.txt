@@ -1,0 +1,11 @@
+Oceanic Analytics — Data Intelligence Startup
+
+Oceanic Analytics is an early-stage data intelligence startup founded in 2021 and based in Miami, Florida. The company was born out of frustration with the fragmented state of data tooling for small and mid-size logistics and supply chain companies — an underserved segment that lacks the engineering resources to build internal data platforms.
+
+The founding team includes CEO and co-founder Priya Nair, previously a data engineering lead at Amazon Logistics, and CTO Marcus Webb, who spent six years building real-time streaming infrastructure at Stripe. Together they've assembled a team of 47 full-time employees and 12 contractors focused on product development, go-to-market, and customer success.
+
+Oceanic's platform — OceanOS — provides a no-code data orchestration layer that integrates with existing ERP and WMS systems, automatically surfaces anomalies in supply chain data, and generates plain-language explanations for non-technical operations managers. The platform's AI layer is built on top of open-source LLM tooling and proprietary fine-tuned models trained on logistics domain data.
+
+The company currently serves 38 paying customers, primarily regional freight brokers, third-party logistics (3PL) providers, and small e-commerce operators. Annual recurring revenue is approximately $4.2 million with an average contract value of $110,000. Net revenue retention sits at 118%.
+
+Oceanic raised a $6 million Seed round in Q3 2022 led by Operator Collective, with angels from the logistics and supply chain world. The team is currently in market for a Series A targeting $15–$20 million to expand the sales team, deepen AI capabilities, and move upmarket toward enterprise logistics companies with revenue above $500 million.

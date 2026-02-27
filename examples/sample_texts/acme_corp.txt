@@ -1,0 +1,11 @@
+Acme Corporation — Company Overview
+
+Acme Corp is a rapidly growing cloud infrastructure company headquartered in San Francisco, California. Founded in 2014 by a team of ex-Google and ex-AWS engineers, the company has carved out a strong niche in the DevOps automation space, helping mid-market enterprises manage their cloud workloads at scale.
+
+The company currently employs approximately 1,200 people across offices in San Francisco, New York, Austin, and London. Over the past fiscal year, Acme reported revenues in the range of $80 million to $100 million, representing 34% year-over-year growth — one of the highest growth rates in its peer group.
+
+Acme's flagship product suite includes three main offerings: CloudSync, a real-time infrastructure synchronization platform; DataBridge, a zero-downtime data migration tool; and AutoScale, an AI-powered autoscaling engine that dynamically adjusts compute resources based on predictive traffic modeling.
+
+The company recently closed a $45 million Series C round led by Sequoia Capital, with participation from a16z and existing investors. The funds are earmarked for international expansion into the APAC region and deeper investment in their AI/ML pipeline capabilities.
+
+Acme Corp operates on a SaaS subscription model and boasts a Net Revenue Retention (NRR) of 127%, signaling strong expansion revenue within its existing customer base. Enterprise customers include Fortune 500 companies in financial services, healthcare, and e-commerce. The company is widely considered a top IPO candidate for 2026.
