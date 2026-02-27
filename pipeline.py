@@ -70,20 +70,30 @@ def load_config() -> dict[str, str]:
 
 # ── LLM Extraction ─────────────────────────────────────────────────────────────
 def build_system_prompt(schema_class: type) -> str:
-    """Build a system prompt that includes the JSON schema for the target model."""
-    schema_json = json.dumps(schema_class.model_json_schema(), indent=2)
+    """Build a system prompt with explicit field list (not raw JSON schema)."""
+    # Build a simple field description instead of the raw JSON schema
+    # This prevents the LLM from returning the schema itself as data
+    fields = schema_class.model_fields
+    field_lines = []
+    for name, field_info in fields.items():
+        annotation = str(field_info.annotation).replace("typing.", "")
+        required = "required" if field_info.is_required() else "optional, use null if unknown"
+        field_lines.append(f'  - "{name}": {annotation} ({required})')
+    fields_str = "\n".join(field_lines)
+
     return (
         "You are a precise data extraction assistant. "
-        "Your job is to read unstructured text and extract structured information.\n\n"
+        "Read unstructured text and extract structured information.\n\n"
+        "Return ONLY a valid JSON object with these fields:\n"
+        f"{fields_str}\n\n"
         "RULES:\n"
-        "1. Return ONLY valid JSON — no markdown, no code fences, no explanations.\n"
-        "2. The JSON must exactly match this schema:\n\n"
-        f"{schema_json}\n\n"
-        "3. For any field you cannot find in the text, use null (for Optional fields) "
-        "or an empty list (for list fields).\n"
-        "4. Set confidence_score (0.0 to 1.0) based on how confident you are in the "
-        "overall extraction quality. 1.0 = all fields found with certainty.\n"
-        "5. Do not invent or hallucinate data — only extract what is stated or strongly implied."
+        "1. Return ONLY the JSON object — no markdown, no code fences, no explanations, no schema.\n"
+        "2. Fill every field with actual extracted data from the text.\n"
+        "3. For fields you cannot determine, use null (for optional) or [] (for lists).\n"
+        "4. confidence_score: float 0.0-1.0 based on extraction certainty.\n"
+        "5. key_products / key_contacts / deal_history: extract as lists from the text.\n"
+        "6. Do NOT return the schema definition — return the EXTRACTED DATA.\n"
+        "7. Do NOT invent or hallucinate data."
     )
 
 
